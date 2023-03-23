@@ -6,8 +6,7 @@ export function MainForm({ show, close }) {
   const [lancamento, setLancamento] = useState({
     id: "",
     data: "",
-    entrada: "",
-    saida: "",
+    valor:"",
     historico: "",
     finalidade: "",
     bancoCaixa: "",
@@ -25,8 +24,19 @@ export function MainForm({ show, close }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setLancamento(lancamento);
-    console.log(lancamento);
+    const dataToSubmit = {
+      ...lancamento,
+    };
+
+    if(tipoMovimento === "entrada"){
+      dataToSubmit.entrada = lancamento.valor;
+      dataToSubmit.saida = null;
+    }else {
+      dataToSubmit.saida = lancamento.valor;
+      dataToSubmit.entrada = null;
+    }
+
+    console.log(dataToSubmit)
   };
 
   return (
@@ -92,12 +102,12 @@ export function MainForm({ show, close }) {
                 />
               </Form.Group>
               <Form.Group controlId="formGroupEntrada">
-                <Form.Label>Entrada</Form.Label>
+                <Form.Label>Valor R$</Form.Label>
                 <Form.Control
                   type="number"
                   placeholder="Valor R$"
-                  value={lancamento.entrada}
-                  name="entrada"
+                  value={lancamento.valor}
+                  name="valor"
                   onChange={handleChange}
                 />
               </Form.Group>
