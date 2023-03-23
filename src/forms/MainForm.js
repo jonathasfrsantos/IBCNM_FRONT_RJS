@@ -6,13 +6,20 @@ export function MainForm({ show, close }) {
   const [lancamento, setLancamento] = useState({
     id: "",
     data: "",
-    valor:"",
+    valor: "",
     historico: "",
     finalidade: "",
     bancoCaixa: "",
   });
 
-
+  const clearForm = () => {
+    setLancamento({
+      valor: "",
+      historico: "",
+      finalidade: "",
+      bancoCaixa: "",
+    });
+  };
 
   const [tipoMovimento, setTipoMovimento] = useState("");
 
@@ -20,23 +27,23 @@ export function MainForm({ show, close }) {
     setLancamento({ ...lancamento, [e.target.name]: e.target.value });
   };
 
-
-
   const handleSubmit = (event) => {
     event.preventDefault();
     const dataToSubmit = {
       ...lancamento,
     };
 
-    if(tipoMovimento === "entrada"){
+    if (tipoMovimento === "entrada") {
       dataToSubmit.entrada = lancamento.valor;
       dataToSubmit.saida = null;
-    }else {
+    } else {
       dataToSubmit.saida = lancamento.valor;
       dataToSubmit.entrada = null;
     }
 
-    console.log(dataToSubmit)
+    clearForm();
+
+    console.log(dataToSubmit);
   };
 
   return (
