@@ -2,6 +2,7 @@
     "lancamentos": [
         {
             "id": 1,
+            "data":"2023-03-01",
             "entrada": 150.00,
             "saida": 0,
             "historico": "fulano",
@@ -11,6 +12,7 @@
 
         {
             "id": 2,
+            "data":"2023-03-20",
             "entrada": 200.00,
             "saida": 0,
             "historico": "Beltrano",
@@ -20,6 +22,7 @@
 
         {
             "id": 3,
+            "data":"2023-03-15",
             "entrada": 0,
             "saida": 200,
             "historico": "Conta de luz",

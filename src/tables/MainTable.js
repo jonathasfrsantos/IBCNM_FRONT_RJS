@@ -1,8 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
+import { api } from "../services/registerServices/api";
 
 export function MainTable(){
     const [dataTable, setDataTable] = useState([]);
+
+
+  useEffect(() => {
+    async function fetchData() {
+      const fecthedData = await api.getAll();
+      setDataTable(fecthedData);
+    }
+
+    fetchData();
+  }, []);
+
+
 
   return (
     <Table striped bordered hover>
