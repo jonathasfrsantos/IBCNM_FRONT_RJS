@@ -1,0 +1,31 @@
+{
+    "lancamentos": [
+        {
+            "id": 1,
+            "entrada": 150.00,
+            "saida": 0,
+            "historico": "fulano",
+            "finalidade": "Dízimos",
+            "bancoCaixa": "CAIXA"
+        },
+
+        {
+            "id": 2,
+            "entrada": 200.00,
+            "saida": 0,
+            "historico": "Beltrano",
+            "finalidade": "Dízimos",
+            "bancoCaixa": "CAIXA"
+        },
+
+        {
+            "id": 3,
+            "entrada": 0,
+            "saida": 200,
+            "historico": "Conta de luz",
+            "finalidade": "Energia elétrica",
+            "bancoCaixa": "ITAÚ"
+        }
+
+    ]
+}
